@@ -1,12 +1,14 @@
 package com.unrealmojo.hamstermania.ui.activity
 
 import android.content.Intent
+import android.graphics.Rect
 import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.arlib.floatingsearchview.FloatingSearchView
 import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion
@@ -57,6 +59,20 @@ class HamsterListActivity : AppCompatActivity() {
 
         hamstersList.adapter = mAdapter
         hamstersList.layoutManager = LinearLayoutManager(this)
+        hamstersList.addItemDecoration(object: RecyclerView.ItemDecoration() {
+            override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+                val pos = parent.getChildAdapterPosition(view)
+                val margin = resources.displayMetrics.density * 8
+                outRect.left = 0
+                outRect.right = 0
+                outRect.bottom = 0
+                if (pos == 0) {
+                    outRect.top = margin.toInt()
+                } else {
+                    outRect.top = 0
+                }
+            }
+        })
 
         mSearchViewDisposable = RxFloatingSearchView.queryChanges(search, 0)
                 .skipInitialValue()
