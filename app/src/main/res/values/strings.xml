@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Hamster Mania</string>
+    <string name="hamster_title_default">Неизвестный хомяк</string>
+    <string name="hamster_description_default">Мы ничего о нем не знаем :(</string>
+    <string name="msg_no_hamsters">Хомячков пока нет :(</string>
+    <string name="msg_hamsters_loaded_from_cache">Новые хомячки не загрузилсь, но вы можете посмотеть сохраненных зверьков)</string>
+    <string name="title_share_app_chooser">Поделиться</string>
+    <string name="title_search">Поиск хомячка</string>
+    <string name="about">О программе</string>
+</resources>
