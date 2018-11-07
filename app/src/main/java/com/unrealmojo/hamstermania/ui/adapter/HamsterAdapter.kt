@@ -1,6 +1,8 @@
 package com.unrealmojo.hamstermania.ui.adapter
 
 import android.content.Context
+import android.support.v4.content.ContextCompat
+import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -56,6 +58,12 @@ class HamsterAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HamsterViewHolder =
             HamsterViewHolder(LayoutInflater.from(mContext).inflate(R.layout.adapter_hamster, parent, false))
+                    .also { holder ->
+                        val wrappedBtnShareIcon = ContextCompat.getDrawable(mContext, R.drawable.ic_btn_share)
+                                .let { DrawableCompat.wrap(it) }
+                                .also { DrawableCompat.setTint(it, ContextCompat.getColor(mContext, R.color.white)) }
+                        holder.btnShare.setImageDrawable(wrappedBtnShareIcon)
+                    }
 
     override fun getItemCount(): Int = data.size
 
