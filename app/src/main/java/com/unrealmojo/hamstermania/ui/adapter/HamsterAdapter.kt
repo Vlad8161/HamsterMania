@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.squareup.picasso.Picasso
+import com.unrealmojo.hamstermania.R
 import com.unrealmojo.hamstermania.data.ui.Hamster
 
 class HamsterAdapter(
@@ -47,7 +48,7 @@ class HamsterAdapter(
                     .error(R.drawable.ic_logo)
                     .into(holder.image)
         } else {
-            holder.image.setImageResource(android.R.drawable.ic_secure)
+            holder.image.setImageResource(R.drawable.ic_logo)
         }
         holder.itemView.setOnClickListener { mOnItemClick(item, holder) }
         holder.btnShare.setOnClickListener { mOnItemShareClick(item, holder) }

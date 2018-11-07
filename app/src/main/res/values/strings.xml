@@ -6,5 +6,6 @@
     <string name="msg_hamsters_loaded_from_cache">Новые хомячки не загрузилсь, но вы можете посмотеть сохраненных зверьков)</string>
     <string name="title_share_app_chooser">Поделиться</string>
     <string name="title_search">Поиск хомячка</string>
+    <string name="title_detailed">Детальная информация</string>
     <string name="about">О программе</string>
 </resources>
